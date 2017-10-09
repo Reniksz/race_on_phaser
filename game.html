@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html lang="ru"> 
-<head> 
-	<meta charset="UTF-8" />
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
     <title>Game</title>
-	<script type="text/javascript" src="js/phaser.js"></script>
-	<script type="text/javascript" src="js/boot.js"></script>
-	<script type="text/javascript" src="js/preload.js"></script>
-	<script type="text/javascript" src="js/gametitle.js"></script>
-	<script type="text/javascript" src="js/gamesettings.js"></script>
-	<script type="text/javascript" src="js/thegame.js"></script>
-	<script type="text/javascript" src="js/gameover.js"></script>
-    <style type="text/css">
-        body {
-            margin: 0;
-        }
-    </style>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/libs/phaser.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/underscore.js"></script>
+    <script type="text/javascript" src="js/libs/backbone-min.js"></script>
+
+    <!-- Adding Backbone.Modal extension here -->
+    <link type="text/css" rel="stylesheet" href="js/libs/backbone_modal/backbone.modal.css">
+    <link type="text/css" rel="stylesheet" href="js/libs/backbone_modal/backbone.modal.theme.css">
+    <script type="text/javascript" src="js/libs/backbone_modal/backbone.modal.js"></script>
+
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/preload.js"></script>
+    <script type="text/javascript" src="js/gametitle.js"></script>
+    <script type="text/javascript" src="js/gamesettings.js"></script>
+    <script type="text/javascript" src="js/thegame.js"></script>
 </head>
+
 <body>
-	<div id = "phaser-game" style = "width:800px; height:600px"></div>
-	<script type = "text/javascript" src = "js/init.js"></script>  
+    <!-- templates -->
+    <script type="text/template" id="modal-template">
+        <div class="bbm-modal__topbar">
+            <h3 class="bbm-modal__title">Результаты гонки</h3>
+        </div>
+        <div class="bbm-modal__section">
+            <p>Текущий заезд:
+                <%= result %> с.</p>
+            <p>Рекорд:
+                <%= bestResult%> с.</p>
+        </div>
+        <div class="bbm-modal__bottombar">
+            <a href="#" class="bbm-button">Play again</a>
+        </div>
+    </script>
+
+    <div class="app"></div>
+    <div id="phaser-game"></div>
+
+    <script type="text/javascript" src="js/init.js"></script>
 </body>
+
 </html>
